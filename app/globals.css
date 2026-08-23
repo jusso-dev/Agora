@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: #fafafa;
+  color: #171717;
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.prose-agora {
+  line-height: 1.7;
+}
+.prose-agora h1,
+.prose-agora h2,
+.prose-agora h3 {
+  font-weight: 600;
+  margin: 1.5em 0 0.5em;
+  line-height: 1.3;
+}
+.prose-agora h1 {
+  font-size: 1.5rem;
+}
+.prose-agora h2 {
+  font-size: 1.25rem;
+}
+.prose-agora h3 {
+  font-size: 1.05rem;
+}
+.prose-agora p,
+.prose-agora ul,
+.prose-agora ol {
+  margin: 0.75em 0;
+}
+.prose-agora ul {
+  list-style: disc;
+  padding-left: 1.4em;
+}
+.prose-agora ol {
+  list-style: decimal;
+  padding-left: 1.4em;
+}
+.prose-agora li {
+  margin: 0.3em 0;
+}
+.prose-agora a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-agora code {
+  background: #f4f4f5;
+  border-radius: 6px;
+  padding: 0.15em 0.35em;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875em;
+}
+.prose-agora pre {
+  background: #18181b;
+  color: #fafafa;
+  border-radius: 10px;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1em 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.prose-agora pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+.prose-agora blockquote {
+  border-left: 3px solid #e4e4e7;
+  padding-left: 1em;
+  color: #52525b;
+  margin: 1em 0;
+}
+.prose-agora hr {
+  border-color: #e4e4e7;
+  margin: 1.5em 0;
+}
+.prose-agora table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.9rem;
+}
+.prose-agora th,
+.prose-agora td {
+  border: 1px solid #e4e4e7;
+  padding: 0.4em 0.7em;
+  text-align: left;
 }

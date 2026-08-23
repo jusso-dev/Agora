@@ -6,21 +6,40 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:push": "drizzle-kit push",
+    "db:seed": "tsx scripts/seed.ts",
+    "lightpanda:install": "tsx scripts/install-lightpanda.ts",
+    "e2e": "npm run lightpanda:install && playwright test --project=lightpanda",
+    "e2e:instant": "playwright install chromium && playwright test --project=chromium e2e/instant.spec.ts",
+    "e2e:readme": "playwright install chromium && playwright test --project=chromium e2e/screenshots.spec.ts",
+    "e2e:all": "npm run e2e && playwright install chromium && playwright test --project=chromium"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "better-auth": "^1.7.1",
+    "better-sqlite3": "^12.11.1",
+    "drizzle-orm": "^0.45.2",
+    "fflate": "^0.8.3",
     "next": "16.3.2",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
+    "@next/playwright": "^16.3.2",
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^9.6.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.3.2",
     "tailwindcss": "^4",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   }
 }
